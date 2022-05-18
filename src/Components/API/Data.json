@@ -1,0 +1,91 @@
+[
+        {
+            "id":1,
+            "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Audi-Logo_2016.svg/250px-Audi-Logo_2016.svg.png",
+            "brand": "Audi",
+            "model": "A4",
+            "coverImg": "https://purepng.com/public/uploads/large/purepng.com-audi-a4-caraudicars-961524670575xcrug.png",
+            "year": 2020,
+            "HP": 204,
+            "ENGINE": 1.6,
+            "type": "sedan",
+            "GAS": "Dizel",
+            "WD": "2 ceker",
+            "oy": 2200,
+            "yorum": 320,
+            "overview": "A4, sınıfının en çok satan modellerinden biridir. 2019’daki bir makyaj ile, elden geçirilmiş tasarımla sonuçlandı: yeni farlar, ön ızgara öğeleri ön ucu değişti; Yan taraf, tekerlek kemerlerini vurgulamak için ayarlanmış bir omuz çizgisine sahip ve arka lambalar daha karmaşık LED grafiklere sahip artık. Direksiyon bir Alfa Romeo Giulia’nınki kadar kullanışlı değil, ancak iyi bir tutuş ve çeviklik sağlayan şasiye iyi bir şekilde ayarlandı. Yine de inanılmaz derecede hafif hissiyat veriyor.",
+            "images": [
+                "https://www.log.com.tr/wp-content/uploads/2019/05/2020s4audi5-660x371.jpg",
+                "https://www.oopscars.com/wp-content/uploads/IMG_20190808_141448.jpg",
+                "https://arabahaber.com.tr/wp-content/uploads/2020/01/2020-audi-a4-ve-s4-abd-fiyatlari-belli-oldu-1.jpg",
+                "https://www.webtekno.com/images/editor/default/0002/40/888cc5debd5dd6db0ce2f51f02a4f037d5f319f5.jpeg"
+                ]
+        },
+        {
+            "id":2,
+            "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Audi-Logo_2016.svg/250px-Audi-Logo_2016.svg.png",
+            "brand": "Audi",
+            "model": "A6",
+            "coverImg": "https://www.pngplay.com/wp-content/uploads/13/BMW-320-Background-PNG-Image.png",
+            "year": 2020,
+            "HP": 204,
+            "ENGINE": 1.6,
+            "type": "sedan",
+            "GAS": "Dizel",
+            "WD": "2 ceker",
+            "oy": 2000,
+            "yorum": 380,
+            "overview": "A4, sınıfının en çok satan modellerinden biridir. 2019’daki bir makyaj ile, elden geçirilmiş tasarımla sonuçlandı: yeni farlar, ön ızgara öğeleri ön ucu değişti; Yan taraf, tekerlek kemerlerini vurgulamak için ayarlanmış bir omuz çizgisine sahip ve arka lambalar daha karmaşık LED grafiklere sahip artık. Direksiyon bir Alfa Romeo Giulia’nınki kadar kullanışlı değil, ancak iyi bir tutuş ve çeviklik sağlayan şasiye iyi bir şekilde ayarlandı. Yine de inanılmaz derecede hafif hissiyat veriyor.",
+            "images": [
+                "https://www.log.com.tr/wp-content/uploads/2019/05/2020s4audi5-660x371.jpg",
+                "https://www.oopscars.com/wp-content/uploads/IMG_20190808_141448.jpg",
+                "https://arabahaber.com.tr/wp-content/uploads/2020/01/2020-audi-a4-ve-s4-abd-fiyatlari-belli-oldu-1.jpg",
+                "https://www.webtekno.com/images/editor/default/0002/40/888cc5debd5dd6db0ce2f51f02a4f037d5f319f5.jpeg"
+            ]
+        },
+        {
+            "id":3,
+            "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Audi-Logo_2016.svg/250px-Audi-Logo_2016.svg.png",
+            "brand": "Mercedes",
+            "model": "GLA",
+            "coverImg": "https://www.pngplay.com/wp-content/uploads/13/BMW-320-Background-PNG-Image.png",
+            "year": 2020,
+            "HP": 204,
+            "ENGINE": 1.6,
+            "type": "sedan",
+            "GAS": "Dizel",
+            "WD": "2 ceker",
+            "oy": 1200,
+            "yorum": 420,
+            "overview": "A4, sınıfının en çok satan modellerinden biridir. 2019’daki bir makyaj ile, elden geçirilmiş tasarımla sonuçlandı: yeni farlar, ön ızgara öğeleri ön ucu değişti; Yan taraf, tekerlek kemerlerini vurgulamak için ayarlanmış bir omuz çizgisine sahip ve arka lambalar daha karmaşık LED grafiklere sahip artık. Direksiyon bir Alfa Romeo Giulia’nınki kadar kullanışlı değil, ancak iyi bir tutuş ve çeviklik sağlayan şasiye iyi bir şekilde ayarlandı. Yine de inanılmaz derecede hafif hissiyat veriyor.",
+            "images": [
+                "https://www.log.com.tr/wp-content/uploads/2019/05/2020s4audi5-660x371.jpg",
+                "https://www.oopscars.com/wp-content/uploads/IMG_20190808_141448.jpg",
+                "https://arabahaber.com.tr/wp-content/uploads/2020/01/2020-audi-a4-ve-s4-abd-fiyatlari-belli-oldu-1.jpg",
+                "https://www.webtekno.com/images/editor/default/0002/40/888cc5debd5dd6db0ce2f51f02a4f037d5f319f5.jpeg"
+            ]
+        },
+        {
+            "id":4,
+            "logo": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Audi-Logo_2016.svg/250px-Audi-Logo_2016.svg.png",
+            "brand": "BMW",
+            "model": "320i",
+            "coverImg": "https://www.pngplay.com/wp-content/uploads/13/BMW-320-Background-PNG-Image.png",
+            "year": 2020,
+            "HP": 204,
+            "ENGINE": 1.6,
+            "type": "sedan",
+            "GAS": "Dizel",
+            "WD": "2 ceker",
+            "oy": 2500,
+            "yorum": 480,
+            "overview": "A4, sınıfının en çok satan modellerinden biridir. 2019’daki bir makyaj ile, elden geçirilmiş tasarımla sonuçlandı: yeni farlar, ön ızgara öğeleri ön ucu değişti; Yan taraf, tekerlek kemerlerini vurgulamak için ayarlanmış bir omuz çizgisine sahip ve arka lambalar daha karmaşık LED grafiklere sahip artık. Direksiyon bir Alfa Romeo Giulia’nınki kadar kullanışlı değil, ancak iyi bir tutuş ve çeviklik sağlayan şasiye iyi bir şekilde ayarlandı. Yine de inanılmaz derecede hafif hissiyat veriyor.",
+            "images": [
+                "https://www.log.com.tr/wp-content/uploads/2019/05/2020s4audi5-660x371.jpg",
+                "https://www.oopscars.com/wp-content/uploads/IMG_20190808_141448.jpg",
+                "https://arabahaber.com.tr/wp-content/uploads/2020/01/2020-audi-a4-ve-s4-abd-fiyatlari-belli-oldu-1.jpg",
+                "https://www.webtekno.com/images/editor/default/0002/40/888cc5debd5dd6db0ce2f51f02a4f037d5f319f5.jpeg"
+            ]
+        }
+]
+
