@@ -6,17 +6,21 @@ import Searched from "./Searched";
 import ErrorPage from './ErrorPage'
 
 import { Route, Routes } from "react-router-dom";
+/* Animation import */
+import { AnimatePresence } from "framer-motion";
 
 const Pages = () => {
     
   return (
+      <AnimatePresence exitBeforeEnter>
         <Routes>
             <Route path='/' element={<MainMenu/>}/>
             <Route exact path='/list/:brand' element={<BrandDetail/>}/>
             <Route exact path='/detail/:model' element={<CarDetail/>}/>
             <Route path='/searched/:search' element={<Searched/>}/>
-            <Route path='*' element={<ErrorPage/>}/>
+            <Route path='/searched/*' element={<ErrorPage/>}/>
         </Routes>
+      </AnimatePresence>
   )
 }
 

@@ -7,7 +7,7 @@ const MostRated = () => {
       <p className='md:text-4xl font-bold tracking-tight text-slate-700 text-3xl py-4 border-b-2 border-slate-700 self-start ml-4'>
         Haftanin en cok oy alanlari
       </p>
-      <div className='md:flex md:flex-row sm:flex-col'>
+      <div className='flex md:flex-row flex-col'>
         {
           Data.map((data, index) => {
               return (

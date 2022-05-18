@@ -4,7 +4,7 @@ class ErrorPage extends Component {
     render() {
         return (
             <div>
-               Data not Found
+                Data not Found
             </div>
         );
     }

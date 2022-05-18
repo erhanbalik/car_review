@@ -2,11 +2,53 @@ import React from 'react'
 import {useParams} from "react-router-dom";
 import Data from '../API/Data.json';
 
+/* Animation */
+import { motion } from "framer-motion";
+
 const CarDetail = () => {
   let {model} = useParams();
+
+  const variants = {
+    hidden: {
+      opacity: 0,
+      x:'100vw'
+    },
+    visible: {
+      opacity: 1,
+      x:0,
+      transition: {delay: .2, duration: .5}
+    },
+    exit: {
+      x: '-100vw',
+      transtion: { ease: 'easeInOut'}
+    }
+  }
+
+  const imgVariants = {
+    enter: {
+      x: '100vw',
+      opacity: 0
+    },
+    center: {
+      zIndex: 1,
+      x: 0,
+      opacity: 1
+    },
+    exit: {
+      zIndex: 0,
+      x:'-100vw',
+      opacity: 0
+    }
+  }
+
   return (
-      // Specs each car
-    <div className='w-full'>
+      // Specs for each car
+    <motion.div className='w-full'
+    variants={variants}
+    initial="hidden"
+    animate="visible"
+    exit="exit"
+    >
       {
         Data.map((data, index) => {
           return (
@@ -17,7 +59,7 @@ const CarDetail = () => {
                         <img src={data.coverImg} alt={data.brand} className='' />
                       </div>
 
-                      <div className='w-full md:grid grid-cols-2 gap-20 items-start justify-center sm:flex flex-col-reverse justify-center'>
+                      <div className='w-full md:grid grid-cols-2 gap-20 items-start justify-center flex flex-col-reverse'>
 
                         <div className='main w-full flex-col items-center justify-center flex'>
                           <div>
@@ -25,13 +67,21 @@ const CarDetail = () => {
                           </div>
                           <div>
                             {
-                              data.images.map((img, index) => <img key={index} src={img}/>)
+                              data.images.map((img) => <motion.img 
+                              key={img.id} 
+                              src={img}
+                              variants={imgVariants}
+                              initial="enter"
+                              animate="center"
+                              exit="exit"
+                              drag="x"
+                              />)
                             }
                           </div>
 
                         </div>
 
-                        <div className='info md:w-4/5 sm:w-full sm:flex flex-col items-center justify-center'>
+                        <div className='info w-full flex flex-col items-center justify-center'>
                           <div className='flex justify-start items-center'>
                             <img src={data.logo} alt={data.brand} className='h-6'/>
                           </div>
@@ -45,7 +95,7 @@ const CarDetail = () => {
                               <p>{data.yorum}</p>
                             </div>
                           </div>
-                          <div className='w-full sm:grid grid-cols-2 sm:items-center sm:justify-center md:flex md:flex-col md:items-start md:justify-center'>
+                          <div className='md:w-full w-32 md:grid grid-cols-2 items-start justify-center flex flex-col'>
                             <p >Marka: {data.brand}</p>
                             <p >Model: {data.model}</p>
                             <p>Yil: {data.year}</p>
@@ -67,7 +117,7 @@ const CarDetail = () => {
           )
         })
       }
-    </div>
+    </motion.div>
   )
 }
 

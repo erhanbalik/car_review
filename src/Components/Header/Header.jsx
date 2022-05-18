@@ -10,10 +10,14 @@ const Header = () => {
     // navigate hook for search value to send which car needed
   const navigate = useNavigate();
 
-    // handler after form submittion and navigate to searched page
+    // handler after search submittion and navigate to searched page
   const submitHandler = (e) => {
+      //When entered stop page reload
       e.preventDefault();
+      // Change the page to searched value
       navigate("searched/" + search);
+      // Remove searched value 
+      setSearch("");
   }
 
   return (
@@ -23,10 +27,10 @@ const Header = () => {
         <img className='w-16' src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/9d560144119253.580803078eedb.jpg" alt="Company Logo" />
       </Link>
       {/* SEARCH BAR */}
-      <div className='search w-1/2'>
+      <div className='search w-1/2 text-center'>
           <form onSubmit={submitHandler}>
-        <input className="w-full h-8 border border-slate-400 text-left placeholder:text-slate-500 rounded-md px-2 focus:border-orange-400 focus:outline-none placeholder:italic"
-               type="search" placeholder='Aracini ara' value={search} onChange={(e) => setSearch(e.target.value)}
+        <input className="w-1/2 h-8 border border-slate-400 text-left placeholder:text-slate-500 rounded-md px-2 focus:border-orange-400 focus:outline-none placeholder:italic focus:w-full  transition-all"
+              type="search" placeholder='Aracini ara' value={search} onChange={(e) => setSearch(e.target.value)}
         />
           </form>
       </div>

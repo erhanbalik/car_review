@@ -1,8 +1,8 @@
 const brands = [
     "Audi",
     "Mercedes",
-    "BMW",
-    "FORD",
+    "Bmw",
+    "Ford",
     "Nissan",
     "Toyota",
     "Opel",
