@@ -1,12 +1,17 @@
 import {useParams, Link} from "react-router-dom";
 import Data from '../API/Data.json';
+import { useState } from "react";
+
+import {GrNext, GrPrevious} from 'react-icons/gr'
 
 /* Animation */
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 function Searched() {
     // which is coming from navigate hook at the Header page to use show car detail
     let {search} = useParams();
+    /* State for Images preview slider */
+  const [imgIndex, setImgIndex] = useState(0);
 
     const variants = {
         hidden: {
@@ -23,6 +28,22 @@ function Searched() {
             transtion: { ease: 'easeInOut'}
         }
     }
+
+    /* Variants for image slides */
+  const imgVariants = {
+    enter: {
+      opacity: 0
+    },
+    center: {
+      opacity: 1,
+      transition: {duration: 1, delay: .5}
+    },
+    exit: {
+      x:'-500px',
+      opacity: 0,
+      transition: { ease: 'easeInOut'}
+    }
+  }
 
     return (
         <motion.div 
@@ -42,19 +63,14 @@ function Searched() {
                             <img src={item.coverImg} alt={item.brand} className='' />
                         </div>
 
-                        <div className='w-full md:grid grid-cols-2 gap-20 items-start justify-center sm:flex flex-col-reverse justify-center'>
+                        <div className='w-full md:grid grid-cols-2 gap-20 items-start justify-center sm:flex flex-col-reverse'>
 
                             <div className='main w-full flex-col items-center justify-center flex'>
                             <div>
                                 <p>{item.overview}</p>
                             </div>
-                            <div>
-                                {
-                                item.images.map((img, index) => <img key={index} src={img}/>)
-                                }
                             </div>
 
-                            </div>
                             <div className='info md:w-4/5 sm:w-full sm:flex flex-col items-center justify-center'>
                             <div className='flex justify-start items-center'>
                                 <img src={item.logo} alt={item.brand} className='h-6'/>
@@ -83,8 +99,29 @@ function Searched() {
                             </div>
 
                         </div>
+                            <div className='relative flex w-full items-center justify-center mt-10'>
+                                <AnimatePresence>
+                                    <motion.img 
+                                        className=' w-3/4'
+                                        key={item.id} 
+                                        src={item.images[imgIndex]}
+                                        variants={imgVariants}
+                                        initial="enter"
+                                        animate="center"
+                                        exit="exit"
+                                        />
+                                </AnimatePresence>
+                                    <div className='absolute top-0 flex w-10/12 h-full items-center justify-between'>
+                                            <div>
+                                                <button onClick={() => setImgIndex(imgIndex === 0 ? item.images.length - 1 : imgIndex - 1)}><GrPrevious/></button>
+                                            </div>
+                                            <div><button onClick={() => setImgIndex(item.images.length - 1 === imgIndex ? 0 : imgIndex + 1 )}><GrNext/></button>
+                                        </div>
+                                    </div>
+                            </div>
                         </div>
-                    : null }
+                    : null 
+                    }
 
                                 {/* Display item if search value car brand matched */}
                         {search === item.brand.toLowerCase() ? 

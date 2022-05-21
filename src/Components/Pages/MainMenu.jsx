@@ -4,6 +4,7 @@ import MostComment from "../MostComment/MostComment";
 import MostRated from "../MostRated/MostRated";
 import List from "../List/List"
 
+
 /* Animation */
 import { motion } from "framer-motion";
 
@@ -22,6 +23,7 @@ const MainMenu = () => {
     }
   }
   return (
+    
     <motion.div className='flex flex-col'
     variants={variants}
     initial="hidden"

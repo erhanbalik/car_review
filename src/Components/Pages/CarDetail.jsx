@@ -1,13 +1,18 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {useParams} from "react-router-dom";
+import {GrNext, GrPrevious} from 'react-icons/gr'
 import Data from '../API/Data.json';
 
 /* Animation */
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 const CarDetail = () => {
   let {model} = useParams();
 
+  /* State for Images preview slider */
+  const [imgIndex, setImgIndex] = useState(0);
+
+  /* Animation Variants for page changes */
   const variants = {
     hidden: {
       opacity: 0,
@@ -24,20 +29,19 @@ const CarDetail = () => {
     }
   }
 
+  /* Variants for image slides */
   const imgVariants = {
     enter: {
-      x: '100vw',
       opacity: 0
     },
     center: {
-      zIndex: 1,
-      x: 0,
-      opacity: 1
+      opacity: 1,
+      transition: {duration: 1, delay: .5}
     },
     exit: {
-      zIndex: 0,
-      x:'-100vw',
-      opacity: 0
+      x:'-500px',
+      opacity: 0,
+      transition: { ease: 'easeInOut'}
     }
   }
 
@@ -52,66 +56,60 @@ const CarDetail = () => {
       {
         Data.map((data, index) => {
           return (
-              <div key={index} >
+              <div key={index}  className='flex w-full items-center justify-center mt-2' >
                 {data.model === model ?
                     <div className='w-11/12 '>
                       <div className='w-full flex items-center justify-center mb-16'>
-                        <img src={data.coverImg} alt={data.brand} className='' />
+                        <img src={data.coverImg} alt={data.brand} className=' w-9/12' />
                       </div>
 
-                      <div className='w-full md:grid grid-cols-2 gap-20 items-start justify-center flex flex-col-reverse'>
-
-                        <div className='main w-full flex-col items-center justify-center flex'>
+                      <div className='w-full md:grid grid-cols-2 gap-20 items-center justify-center flex flex-col-reverse'>
                           <div>
+                            <p className=' text-xl font-bold mb-4'>{data.brand} {data.model}</p>
                             <p>{data.overview}</p>
                           </div>
-                          <div>
-                            {
-                              data.images.map((img) => <motion.img 
-                              key={img.id} 
-                              src={img}
+
+                        <div className='card bg-gradient-to-t from-slate-400
+                          via-slate-600 to-slate-700 w-80 h-full rounded-xl p-6 space-y-4 mx-3 my-3'>
+                          <img className='w-full h-22 rounded-md' src={data.logo}/>
+                            <div className='text-gray-300 font-semibold text-xl flex justify-around pt-8'>
+                              <p>{data.brand}</p>
+                              <p>{data.model}</p>
+                            </div>
+                            <div className='md:grid grid-cols-2 justify-center pt-12 text-gray-300 text-lg select-none flex flex-col items-center'>
+                              <p>{data.year}</p>
+                              <p>{data.ENGINE} LT</p>
+                              <p>{data.HP} HP</p>
+                              <p>{data.GAS}</p>
+                              <p>{data.type}</p>
+                            </div>
+                        </div>
+                      </div>
+
+                      <div className='relative flex w-full items-center justify-center mt-10'>
+                              <AnimatePresence>
+                              <motion.img 
+                              className='w-4/5'
+                              key={data.id} 
+                              src={data.images[imgIndex]}
                               variants={imgVariants}
                               initial="enter"
                               animate="center"
                               exit="exit"
-                              drag="x"
-                              />)
-                            }
+                              />
+                              </AnimatePresence>
+                              <div className='absolute top-0 flex w-11/12 h-full items-center justify-between'>
+                                  <div>
+                                    <button onClick={() => setImgIndex(imgIndex === 0 ? data.images.length - 1 : imgIndex - 1)}><GrPrevious/></button>
+                                  </div>
+                                  <div><button onClick={() => setImgIndex(data.images.length - 1 === imgIndex ? 0 : imgIndex + 1 )}><GrNext/></button>
+                                  </div>
+                              </div>
                           </div>
-
-                        </div>
-
-                        <div className='info w-full flex flex-col items-center justify-center'>
-                          <div className='flex justify-start items-center'>
-                            <img src={data.logo} alt={data.brand} className='h-6'/>
-                          </div>
-                          <div className='flex w-1/2 items-center justify-around'>
-                            <div className='flex flex-col items-center justify-center'>
-                              <p>Oy</p>
-                              <p>{data.oy}</p>
-                            </div>
-                            <div className='flex flex-col items-center justify-center'>
-                              <p>Yorum</p>
-                              <p>{data.yorum}</p>
-                            </div>
-                          </div>
-                          <div className='md:w-full w-32 md:grid grid-cols-2 items-start justify-center flex flex-col'>
-                            <p >Marka: {data.brand}</p>
-                            <p >Model: {data.model}</p>
-                            <p>Yil: {data.year}</p>
-                            <p>Yakit: {data.GAS}</p>
-                            <p>Motor: {data.ENGINE}</p>
-                            <p>Guc: {data.HP} hp</p>
-                            <p>Tip: {data.type}</p>
-                            <p>Cekis: {data.WD}</p>
-                          </div>
-
-                        </div>
-
-                      </div>
 
                     </div>
-                : null}
+                  : null
+                }
 
               </div>
           )

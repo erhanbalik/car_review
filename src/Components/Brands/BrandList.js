@@ -3,10 +3,7 @@ const brands = [
     "Mercedes",
     "Bmw",
     "Ford",
-    "Nissan",
-    "Toyota",
-    "Opel",
     "Tesla",
-    "Volvo",
+    "Volvo"
 ]
 export default brands;
