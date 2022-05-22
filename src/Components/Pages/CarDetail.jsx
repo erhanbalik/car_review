@@ -70,7 +70,7 @@ const CarDetail = () => {
                           </div>
 
                         <div className='card bg-gradient-to-t from-slate-400
-                          via-slate-600 to-slate-700 w-80 h-full rounded-xl p-6 space-y-4 mx-3 my-3'>
+                          via-slate-600 to-slate-700 w-72 h-11/12 rounded-xl p-6 space-y-4 mx-3 my-3'>
                           <img className='w-full h-22 rounded-md' src={data.logo}/>
                             <div className='text-gray-300 font-semibold text-xl flex justify-around pt-8'>
                               <p>{data.brand}</p>
