@@ -15,7 +15,7 @@ function App() {
 
   // After loading done show main content
   return (
-    <div className="App flex flex-col h-screen justify-between">    
+    <div className="App flex flex-col h-screen justify-between max-w-screen-xl ml-auto mr-auto">
       <BrowserRouter>
         <Header />
         <Pages/>

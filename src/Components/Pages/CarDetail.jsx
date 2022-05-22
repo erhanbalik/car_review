@@ -63,12 +63,14 @@ const CarDetail = () => {
                         <img src={data.coverImg} alt={data.brand} className=' w-9/12' />
                       </div>
 
-                      <div className='w-full md:grid grid-cols-2 gap-20 items-center justify-center flex flex-col-reverse'>
-                          <div>
+                      {/* Car main overview */}
+                      <div className='w-full gap-20 md:flex-row items-center justify-center flex flex-col-reverse'>
+                          <div className=' md:w-1/2 w-11/12'>
                             <p className=' text-xl font-bold mb-4'>{data.brand} {data.model}</p>
                             <p>{data.overview}</p>
                           </div>
 
+                          {/* Car brand details logo etc. */}
                         <div className='card bg-gradient-to-t from-slate-400
                           via-slate-600 to-slate-700 w-72 h-11/12 rounded-xl p-6 space-y-4 mx-3 my-3'>
                           <img className='w-full h-22 rounded-md' src={data.logo}/>
@@ -86,6 +88,7 @@ const CarDetail = () => {
                         </div>
                       </div>
 
+                      {/* Car detail images */}
                       <div className='relative flex w-full items-center justify-center mt-10'>
                               <AnimatePresence>
                               <motion.img 
